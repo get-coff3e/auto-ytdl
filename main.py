@@ -56,7 +56,7 @@ if __name__ == "__main__":
             }
             with yt_dlp.YoutubeDL(YDL_OPTS) as ydl:
                 info_dict = ydl.extract_info(entry, download=False)
-                channel_name = info_dict.get("url", None)
+                channel_name = info_dict.get("channel", None)
 
                 if not os.path.exists(f'Download/{website}/{channel_name}') or currentHour != storedHour:
                     print(f"Downloading {channel_name} from {website}")
